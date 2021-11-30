@@ -1,0 +1,54 @@
+
+POST http://localhost:8080/users/register
+Content-Type: application/json
+
+{
+    "email":"dor@email.com",
+    "password":"123456",
+    "name":"dor"
+}
+###
+
+
+OPTIONS http://localhost:8080/
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRvckBlbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQzLmF4c2xJM0dzcHN0UmRvUFFFcmpPT3dmYXNsWS42dC5JeS9hMTFuS1loTFluM2o0TWtpYSIsIm5hbWUiOiJkb3IiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjM4Mjk2MjEzfQ.w1YYm6VStLTws9FHOL-keT2CV4aEjwjLUFAPA2rHL3E
+
+
+
+###
+POST http://localhost:8080/users/login
+Content-Type: application/json
+
+{
+    "email":"admin@email.com",
+    "password":"Rc123456!"
+}
+
+###
+POST http://localhost:8080/users/login
+Content-Type: application/json
+
+{
+    "email":"dor@email.com",
+    "password":"123456"
+}
+###
+
+POST http://localhost:8080/users/logout
+Content-Type: application/json
+
+{
+"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbSIsIm5hbWUiOiJhZG1pbiIsInBhc3N3b3JkIjoiUmMxMjM0NTYhIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjM4Mjk0MzEyfQ.r1x9zoM3n3eZ6pPTszTD6BcFugKS6Kgg0ky1ypP-ngQ"
+}
+
+###
+POST http://localhost:8080/users/tokenValidate
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbSIsIm5hbWUiOiJhZG1pbiIsInBhc3N3b3JkIjoiUmMxMjM0NTYhIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjM4Mjk0MzMzfQ.HrrCyTgnpdS79L98NijfXoU760VzvsOnE_B26OGHqOk
+
+
+###
+GET http://localhost:8080/api/v1/information
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRvckBlbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRrRTNRWGs1aWVXM0ludUhqSlJsQXBPOHJVYVRIWWpDNE8xc09ZTmlmQVpKU2diNkdVSE1HRyIsIm5hbWUiOiJkb3IiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjM4Mjk5MjA2fQ.YKFKHwo4EijYrUc1YRIcJpv6vM2ZAzT2cGgBLLpxPtw
+###
+GET http://localhost:8080/api/v1/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbSIsIm5hbWUiOiJhZG1pbiIsInBhc3N3b3JkIjoiUmMxMjM0NTYhIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjM4Mjk0MzMzfQ.HrrCyTgnpdS79L98NijfXoU760VzvsOnE_B26OGHqOk

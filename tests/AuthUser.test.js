@@ -19,13 +19,11 @@ describe('Authorized User Tests', () => {
         const registerResponse = await request(server)
             .post('/users/register')
             .send(userInfoMock)
-
         expect(registerResponse.status).toBe(201)
 
         const loginRes = await request(server)
             .post('/users/login')
             .send(userInfoMock)
-
         expect(loginRes.status).toBe(200)
 
         const infoRes = await request(server)

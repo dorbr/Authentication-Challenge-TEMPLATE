@@ -38,7 +38,6 @@ describe('Options method test', () => {
     test('Client with no token can view only Register and login APIs', async (done) => {
         const noTokenOptionsRes = await request(server)
             .options('/')
-
         expect(noTokenOptionsRes.status).toBe(200)
         expect(noTokenOptionsRes.body.length >= 2).toBe(true)
         done();
