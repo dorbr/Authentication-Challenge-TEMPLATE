@@ -67,7 +67,6 @@ describe('Register & Login Tests', () => {
             .send(userLogoutMock)
 
         expect(loginResponse.status).toBe(200)
-
         const logOutResponse = await request(server)
             .post('/users/logout')
             .send({ token: loginResponse.body.refreshToken })
